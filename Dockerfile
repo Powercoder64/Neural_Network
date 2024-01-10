@@ -21,7 +21,7 @@ RUN echo ". /home/ubuntu/miniconda3/etc/profile.d/conda.sh" >> ~/.profile
 RUN conda init bash
 RUN conda config --set auto_activate_base false
 RUN conda config --set ssl_verify no
-RUN create -n BASNET python=3.7
+RUN conda create -n BASNET python=3.7
 RUN conda activate BASNET
 RUN conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
 RUN pip install joblib==0.13.0
