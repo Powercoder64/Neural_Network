@@ -19,9 +19,10 @@ RUN bash ./Miniconda3-latest-Linux-x86_64.sh -b
 ENV PATH="/home/ubuntu/miniconda3/bin:$PATH"
 RUN echo ". /home/ubuntu/miniconda3/etc/profile.d/conda.sh" >> ~/.profile
 RUN conda config --set ssl_verify no
-RUN conda create -n BASNET python=3.7 --yes
-Run conda init
-RUN conda activate BASNET
+RUN conda init bash
+RUN conda config --set auto_activate_base false
+RUN conda create -n BASNET python=3.8 --yes
+SHELL ["conda", "run", "-n", "BASNET", "/bin/bash", "-c"]
 RUN conda install -y pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
 RUN pip install -y joblib==0.13.0
 RUN pip install -y pandas==0.23.4
@@ -34,3 +35,4 @@ RUN pip install -y tensorflow-estimator==1.13.0
 RUN pip install -y tqdm==4.31.1
 RUN pip install -y opencv-python==4.5.5.62
 RUN pip install -y python-csv==0.0.13
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
