@@ -28,11 +28,11 @@ RUN pip install joblib
 RUN pip install panda
 RUN pip install scikit-learn
 RUN pip install scipy
-RUN pip install tensorflow==1.15.4
-RUN pip install tensorboard==1.15.0
-RUN pip install tensorboard-logger==0.1.0
-RUN pip install tensorflow-estimator==1.13.0
-RUN pip install tqdm==4.31.1
+RUN pip install tensorflow
+RUN pip install tensorboard
+RUN pip install tensorboard-logger
+RUN pip install tensorflow-estimator
+RUN pip install tqdm
 RUN pip install opencv-python
 RUN pip install python-csv
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
