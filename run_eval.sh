@@ -7,4 +7,4 @@ feature_path="./data/"
 
 conda activate BASNET
 
-python -W ignore ./main_eval.py --model_path ${model_path} --output_path ${output_path} --log_path ${log_path} --model_file ${model_file} --video_path ${video_path} --feature_path ${feature_path}
+python -W ignore ./Neural_Network.py --model_path ${model_path} --output_path ${output_path} --log_path ${log_path} --model_file ${model_file} --video_path ${video_path} --feature_path ${feature_path}
