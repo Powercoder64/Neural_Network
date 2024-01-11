@@ -24,15 +24,15 @@ RUN conda config --set auto_activate_base false
 RUN conda create -n BASNET python=3.8 --yes
 SHELL ["conda", "run", "-n", "BASNET", "/bin/bash", "-c"]
 RUN conda install -y pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
-RUN pip install joblib==0.13.0
-RUN pip install pandas==0.23.4
-RUN pip install scikit-learn==0.20.0
-RUN pip install scipy==1.1.0
-RUN pip install tensorboard==1.15.0
-RUN pip install tensorboard-logger==0.1.0
-RUN pip install tensorflow==1.15.4
-RUN pip install tensorflow-estimator==1.13.0
-RUN pip install tqdm==4.31.1
-RUN pip install opencv-python==4.5.5.62
-RUN pip install python-csv==0.0.13
+RUN pip install joblib
+RUN pip install panda
+RUN pip install scikit-learn
+RUN pip install scipy
+RUN pip install tensorboard
+RUN pip install tensorboard-logger
+RUN pip install tensorflow
+RUN pip install tensorflow-estimator
+RUN pip install tqdm
+RUN pip install opencv-python
+RUN pip install python-csv
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
