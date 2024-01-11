@@ -34,5 +34,4 @@ RUN pip install tensorboard-logger
 RUN pip install tensorflow-estimator
 RUN pip install tqdm
 RUN pip install opencv-python
-RUN pip install python-csv
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
