@@ -35,7 +35,7 @@ class_dict = {0: 'Whole_Class_Activity',
               23: 'Transition'}
 
 
-def results_process(results):
+def results_process(results, output_path):
     confi_thresh = np.array([0.00024,0.00024,0.00019,0.00025,0.00018,0.00020,0.00045,
     0.00042,0.00029,0.00025,0.00017,0.00023,0.00017,0.00018,0.00017,0.00021,0.00010,
     0.00020,0.00047,0.00027,0.00020,0.00022,0.00036,0.00047])
@@ -81,7 +81,7 @@ def results_process(results):
     #print(sample_size)
     #scale_f = 19.2
 
-    output_dir = '/home/matthew/BASNET_NEW/results/'
+    output_dir = output_path
 
     for i in range(0, results.shape[0]):
         text_whole = np.zeros([results_all.shape[2] + 1, num_frames[i] + 1], dtype=object)
@@ -135,4 +135,4 @@ def test(net, config, logger, test_loader, test_info, step, model_file=None):
 
             score_np_list.append(score_np)
             #label_np_list.append(label_np)
-    results_process(np.array(score_np_list))
+    results_process(np.array(score_np_list), config.output_path)
