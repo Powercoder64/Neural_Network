@@ -15,6 +15,7 @@ class Config(object):
         self.data_path = args.data_path
         self.model_path = args.model_path
         self.messageid = args.messageid
+        self.request_type = args.request_type
         self.filename = args.filename
         self.output_path = '/home/project/' + args.filename + '/' + args.messageid + '/matrixfiles'
         self.log_path = args.log_path
