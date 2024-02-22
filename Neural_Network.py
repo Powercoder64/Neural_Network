@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
     logger = Logger(config.log_path)
 
-    request_type = 'Neural_Network'
+    request_type = args.request_type
 
     try:
 
