@@ -34,5 +34,4 @@ RUN pip install tensorboard-logger
 RUN pip install tensorflow-estimator
 RUN pip install tqdm
 RUN pip install opencv-python
-RUN curl -o /home/ubuntu/models/ https://public.bn.files.1drv.com/y4mNcPSvhzHZ4RowhEzzcUQbVLGi9GvGrXCla95qEQU96nJRix8eO2iskAUaEhbZZ-NNsEtfPHuOy-MniyR_TtaTyTk6GR3QMwncJoku52U71u-E1PgsFYMWfwHxsDm2pjrFJOSGfAAWJZIdjcm3l8dI0QTpg81lhh01mzsNJA0Ap3YEkn9wDDVLyW2Qi8HY1BlGR1p_CjbxXC6TjyLUV1a4Bzp_YHNxx2XuvH6XhNZARE?AVOverride=1
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
