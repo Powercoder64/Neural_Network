@@ -59,13 +59,13 @@ if __name__ == "__main__":
 
     logger = Logger(config.log_path)
 
-    request_type = args.request_type
 
     try:
 
         test(net, config, logger, test_loader, test_info, 0, model_file=config.model_file)
         messageid = config.messageid
         filename = config.filename
+        request_type = config.request_type
 
         send_status_update(messageid, filename, request_type, 'processing-completed', '...')
         utils.save_best_record_thumos(test_info,
