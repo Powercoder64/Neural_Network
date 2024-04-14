@@ -13,12 +13,12 @@ from thumos_features import *
 import requests
 import json
 
-def send_status_update(messageid, filename, request_type, response_type, comment=""):
+def send_status_update(messageid, filename, requesttype, response_type, comment=""):
     url = "http://aiai-service-service.aiai-ml-curvex-dev.svc.cluster.local/aiai/api/model_run_status_update"
     payload = json.dumps({
         "messageid": messageid,
         "filename": filename,
-        "requestType": request_type,
+        "requestType": requesttype,
         "responseType": response_type,
         "comment": comment
     })
@@ -59,15 +59,16 @@ if __name__ == "__main__":
 
     logger = Logger(config.log_path)
 
+    
 
     try:
 
         test(net, config, logger, test_loader, test_info, 0, model_file=config.model_file)
+        requesttype = config.requesttype
         messageid = config.messageid
         filename = config.filename
-        request_type = config.request_type
 
-        send_status_update(messageid, filename, request_type, 'processing-completed', '...')
+        send_status_update(messageid, filename, requesttype, 'processing-completed', '...')
         utils.save_best_record_thumos(test_info,
                                       os.path.join(config.output_path, "best_record.txt"))
     except Exception as e:
@@ -76,5 +77,5 @@ if __name__ == "__main__":
         messageid = config.messageid
         filename = config.filename
 
-        send_status_update(messageid, filename, request_type,'error', error_message)
+        send_status_update(messageid, filename, requesttype,'error', error_message)
 
