@@ -1,3 +1,4 @@
+
 import numpy as np
 import os
 
@@ -15,7 +16,7 @@ class Config(object):
         self.data_path = args.data_path
         self.model_path = args.model_path
         self.messageid = args.messageid
-        self.request_type = args.request_type
+        self.requesttype = args.requesttype
         self.filename = args.filename
         self.output_path = '/home/project/' + args.filename + '/' + args.messageid + '/matrixfiles'
         self.log_path = args.log_path
@@ -55,5 +56,3 @@ class_dict = {0: 'Whole_Class_Activity',
                 21: 'Teacher_Supporting_Multiple_without_SS_Interaction',
                 22: 'On_Task_Student_Talking_with_Student',
                 23: 'Transition'}
-
-
