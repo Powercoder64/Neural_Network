@@ -5,9 +5,9 @@ import os
 def parse_args():
     descript = 'Pytorch Implementation of Background Suppression Network (BaS-Net)'
     parser = argparse.ArgumentParser(description=descript)
-    parser.add_argument('--messageid', type=str, default='...')
-    parser.add_argument('--filename', type=str, default='...')
-    parser.add_argument('--requesttype', type=str, default='Neural_Network')
+    parser.add_argument('messageid', type=str, default='...')
+    parser.add_argument('filename', type=str, default='...')
+    parser.add_argument('requesttype', type=str, default='Neural_Network')
     parser.add_argument('--data_path', type=str, default='./data/')
     parser.add_argument('--model_path', type=str, default='./models')
     parser.add_argument('--output_path', type=str, default='./outputs')
