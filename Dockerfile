@@ -14,8 +14,9 @@ SHELL ["/bin/bash", "-c"]
 
 RUN sudo apt-get -qq install curl vim git zip
 
-ENV APP_LOC/Neural_Network
-WORKDIR $APP_LOC
+ENV APP_LOC /home/ubuntu/Neural_Network
+
+RUN mkdir -p $APP_LOC
 
 RUN git clone -b master https://github.com/Powercoder64/Neural_Network.git
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
