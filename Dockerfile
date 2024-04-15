@@ -18,10 +18,9 @@ ENV APP_LOC /home/ubuntu/Neural_Network
 
 RUN mkdir -p $APP_LOC
 
-WORKDIR /home/ubuntu
+WORKDIR /home/ubuntu/Neural_Network
 
-COPY Neural_Network /home/ubuntu/Neural_Network
-RUN sudo mkdir /home/project
+RUN sudo mkdir /home/ubuntu/project
 
 RUN git clone -b master https://github.com/Powercoder64/Neural_Network.git
 RUN curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
