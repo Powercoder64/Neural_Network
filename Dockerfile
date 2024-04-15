@@ -48,4 +48,5 @@ RUN pip install tensorflow-estimator
 RUN pip install tqdm
 RUN pip install opencv-python
 RUN pip install requests
+RUN sudo apt-get install -y libgl1-mesa-dev
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "BASNET"]
